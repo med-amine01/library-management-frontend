@@ -14,7 +14,7 @@
           <h5 class="card-title">{{ book.title }}</h5>
           <p class="card-text font-weight-bold mb-2">{{ book.author.name }}</p>
           <p class="card-text mb-2">{{ book.publisher }}</p>
-          <p class="card-text mb-2">{{ book.yearOfPublication}}</p>
+          <p class="card-text mb-2">{{ book.yearOfPublication }}</p>
           <div class="btn-group" role="group" aria-label="Author Actions">
             <a class="btn btn-dark m-1" routerLink="/books/upsert/{{book.id}}">Update</a>
             <button type="button" class="btn btn-danger m-1" (click)="deleteBook(book.id)">Delete</button>
