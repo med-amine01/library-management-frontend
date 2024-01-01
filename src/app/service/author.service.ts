@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 })
 export class AuthorService {
 
-  private BASE_AUTHOR_API = 'http://localhost:8080/api/v1/authors/';
+  private BASE_AUTHOR_API = 'http://localhost:8090/api/v1/authors';
   constructor(private httpClient : HttpClient) { }
 
   getAllAuthorsWithoutPagination(): Observable<Author[]> {
@@ -21,19 +21,19 @@ export class AuthorService {
     return this.httpClient.get<Author[]>(this.BASE_AUTHOR_API, { params });
   }
   getAuthor(id : number) : Observable<Author> {
-    return this.httpClient.get<Author>(this.BASE_AUTHOR_API + id);
+    return this.httpClient.get<Author>(this.BASE_AUTHOR_API +"/"+ id);
   }
   createAuthor(author : Author): Observable<Author> {
     return this.httpClient.post<Author>(this.BASE_AUTHOR_API, author);
   }
   updateAuthor(author : Author, id : number): Observable<Author> {
-    return this.httpClient.put<Author>(this.BASE_AUTHOR_API + id, author);
+    return this.httpClient.put<Author>(this.BASE_AUTHOR_API +"/"+ id, author);
   }
   deleteAuthor(id : number) {
-    return this.httpClient.delete(this.BASE_AUTHOR_API + id);
+    return this.httpClient.delete(this.BASE_AUTHOR_API +"/"+ id);
   }
   generateBooksAndAuthors() : Observable<any> {
-    return this.httpClient.get(this.BASE_AUTHOR_API + 'generate/10/2');
+    return this.httpClient.get(this.BASE_AUTHOR_API + '/generate/10/2');
   }
 }
 

@@ -11,4 +11,3 @@ The only requirement is to have **XAMPP** running.
 
 ## Project made by:
 - Chebbi Med Amine
-- Oueslati Mahdi
